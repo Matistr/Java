@@ -1,0 +1,140 @@
+public class Vendedor{
+        private String nombre;
+        private String codigo;
+        private String cantidad1;
+        private String cantidad2;
+        private String cantidad3;
+        private String totalProductos;
+        private String totalVentas;
+        private String totalComision;
+        
+        public String[][] matrix=new String[8][8];
+
+        public Vendedor(String nombre, String codigo, String cantidad1, String cantidad2, String cantidad3, String totalProductos, String totalVentas, String totalComision) {
+            this.nombre = nombre;
+            this.codigo = codigo;
+            this.cantidad1 = cantidad1;
+            this.cantidad2 = cantidad2;
+            this.cantidad3 = cantidad3;
+            this.totalProductos = totalProductos;
+            this.totalVentas = totalVentas;
+            this.totalComision = totalComision;
+        }
+        
+        public Vendedor() {
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public String getCodigo() {
+            return codigo;
+        }
+
+        public void setCodigo(String codigo) {
+            this.codigo = codigo;
+        }
+
+        public String getCantidad1() {
+            return cantidad1;
+        }
+
+        public void setCantidad1(String cantidad1) {
+            this.cantidad1 = cantidad1;
+        }
+
+        public String getCantidad2() {
+            return cantidad2;
+        }
+
+        public void setCantidad2(String cantidad2) {
+            this.cantidad2 = cantidad2;
+        }
+
+        public String getCantidad3() {
+            return cantidad3;
+        }
+
+        public void setCantidad3(String cantidad3) {
+            this.cantidad3 = cantidad3;
+        }
+
+        public String getTotalProductos() {
+            return totalProductos;
+        }
+
+        public void setTotalProductos(String totalProductos) {
+            this.totalProductos = totalProductos;
+        }
+
+        public String getTotalVentas() {
+            return totalVentas;
+        }
+
+        public void setTotalVentas(String totalVentas) {
+            this.totalVentas = totalVentas;
+        }
+
+        public String getTotalComision() {
+            return totalComision;
+        }
+
+        public void setTotalComision(String totalComision) {
+            this.totalComision = totalComision;
+        }
+
+        public String[][] getMatrix() {
+            return matrix;
+        }
+
+        public void setMatrix(String[][] matrix) {
+            this.matrix = matrix;
+        }
+        public void crearVendedor(){
+            for(int i=0;i<8;i++){
+                if(matrix[i][0]!=null){
+                        ;
+                }else{
+                    matrix[i][0]=totalVentas;
+                    matrix[i][1]=nombre;
+                    matrix[i][2]=codigo;
+                    matrix[i][3]=cantidad1;
+                    matrix[i][4]=cantidad2;
+                    matrix[i][5]=cantidad3;
+                    matrix[i][6]=totalProductos;
+                    matrix[i][7]=totalComision;
+                    
+                }
+                
+            }
+        }
+        public void vendedorTop(){
+            int mayorVenta=0;
+            String[] datos=new String[7];
+            for(int i=0;i<8;i++){
+                for(int j=0;j<8;j++){
+                    if(matrix[i][j]==null){
+                        ;
+                    }else{
+                        if(Integer.parseInt(matrix[i][0])>mayorVenta){
+                            mayorVenta=Integer.parseInt(matrix[i][0]);
+                            datos[0]=totalVentas;
+                            datos[1]=nombre;
+                            datos[2]=codigo;
+                            datos[3]=cantidad1;
+                            datos[4]=cantidad2;
+                            datos[5]=cantidad3;
+                            datos[6]=totalProductos;
+                            datos[7]=totalComision;
+                        }
+                    }
+                }
+            }
+            vt.top(totalVentas, nombre, codigo, cantidad1, cantidad2, cantidad3, totalProductos, totalComision);
+        }
+    }
